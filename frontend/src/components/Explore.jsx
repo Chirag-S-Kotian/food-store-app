@@ -2,17 +2,14 @@ import { menu_list } from "../assets/assets";
 
 const Explore = ({ category, setCategory }) => {
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-5" id="Explore-menu">
       <h1 className="text-black font-bold text-3xl ">Explore our menu</h1>
       <p className="max-w-xl columns-1 text-red-600">
         Choose from a diverse menu featuring a delectable array of dishes.Our
         mission is to satisfy your cravings and evaluate your dining
         experience,one delicious meal at a time.
       </p>
-      <div
-        className="flex justify-between items-center gap-8 text-center mt-5 mb-0 overflow-x-scroll"
-        style={{ "-webkit-scrollbar": "none" }}
-      >
+      <div className="flex justify-between items-center gap-8 text-center mt-5 mb-0 overflow-x-scroll">
         {menu_list.map((item, index) => {
           return (
             <div

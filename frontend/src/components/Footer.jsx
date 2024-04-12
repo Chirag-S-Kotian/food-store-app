@@ -2,7 +2,7 @@ import { assets } from "../assets/assets";
 
 const Footer = () => {
   return (
-    <div className="text-red-400 bg-gray-800 flex flex-col items-center gap-8 p-20 pt-5 pb-8 mt-24">
+    <div id="footer" className="text-red-400 bg-gray-800 flex flex-col items-center gap-8 p-20 pt-5 pb-8 mt-24">
       <div
         className="w-full grid gap-20"
         style={{ gridTemplateColumns: "2fr 1fr 1fr " }}

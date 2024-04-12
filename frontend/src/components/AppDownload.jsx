@@ -2,7 +2,7 @@ import { assets } from "../assets/assets";
 
 const AppDownload = () => {
   return (
-    <div className="my-auto mt-28 text-4xl  text-center font-semibold">
+    <div id="app-download" className="my-auto mt-28 text-4xl  text-center font-semibold">
       <p className="">
         For Better Experience Download <br />
         Elbaf App
