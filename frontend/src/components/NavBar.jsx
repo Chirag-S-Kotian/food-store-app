@@ -1,13 +1,18 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { assets } from "../assets/assets";
 import { Link } from "react-router-dom";
+import { StoreContex } from "./StoreContex";
 
 const NavBar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState("home");
 
+  const { getTotalAmount } = useContext(StoreContex);
+
   return (
     <div className="py-5 flex justify-between items-center">
-      <Link to='/'><img src={assets.logo} alt="" className="w-40" /></Link>
+      <Link to="/">
+        <img src={assets.logo} alt="" className="w-40" />
+      </Link>
       <ul className="flex gap-5 text-blue-900 text-lg cursor-pointer">
         <Link
           to="/"
@@ -56,9 +61,17 @@ const NavBar = ({ setShowLogin }) => {
       </ul>
       <div className="flex items-center gap-10">
         <img src={assets.search_icon} alt="" className="" />
-        <div className="relative">
-          <Link to='/cart'><img src={assets.basket_icon} alt="" className="" /></Link>
-          <div className="absolute min-w-2.5 min-h-2.5 bg-red-500 rounded-md -top-2 -right-2"></div>
+        <div className="relative ">
+          <Link to="/cart">
+            <img src={assets.basket_icon} alt="" className="" />
+          </Link>
+          <div
+            className={
+              getTotalAmount() === 0
+                ? ""
+                : "absolute min-w-2.5 min-h-2.5 bg-red-500 rounded-md -top-2 -right-2"
+            }
+          ></div>
         </div>
         <button
           onClick={() => setShowLogin(true)}
